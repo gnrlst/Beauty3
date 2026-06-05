@@ -1,0 +1,3255 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beauty³ — Investor Page</title>
+  <meta name="description" content="Beauty3 investor page: Trust Commerce, Beauty Advisors, AI recommendations and Beauty Graph.">
+  <style>
+ :root{
+ --black:#070707;
+ --black2:#0c0d0d;
+ --graphite:#111313;
+ --panel:#141616;
+ --panel2:#191b1a;
+
+ --milk:#f5efe7;
+ --paper:#ddd5ca;
+ --muted:#a49f97;
+ --dim:#777872;
+
+ /* Luxury clean palette */
+ --ivory:#f4eadc;
+ --sage:#9caf96;
+ --deep-sage:#5f7a66;
+ --copper:#b9795d;
+ --clay:#8f5f55;
+ --ink-blue:#101820;
+ --violet:#53445f;
+
+ --accent:var(--sage);
+ --accent2:var(--copper);
+ --accent3:var(--ivory);
+ --line:rgba(244,234,220,.13);
+ --line-strong:rgba(244,234,220,.22);
+ --max:1240px;
+ --radius:30px;
+ --shadow:0 30px 90px rgba(0,0,0,.38);
+ }
+
+ *{box-sizing:border-box}
+ html{scroll-behavior:smooth}
+ body{
+ margin:0;
+ background:
+ radial-gradient(circle at 88% 7%, rgba(156,175,150,.10), transparent 30%),
+ radial-gradient(circle at 6% 38%, rgba(185,121,93,.07), transparent 34%),
+ radial-gradient(circle at 70% 92%, rgba(83,68,95,.07), transparent 34%),
+ var(--black);
+ color:var(--milk);
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+ line-height:1.7;
+ overflow-x:hidden;
+ }
+ body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ background:
+ linear-gradient(rgba(255,255,255,.010) 1px, transparent 1px),
+ linear-gradient(90deg, rgba(255,255,255,.008) 1px, transparent 1px);
+ background-size:128px 128px;
+ opacity:.75;
+ mask-image:linear-gradient(to bottom, #000, transparent 78%);
+ z-index:0;
+ }
+ body:after{display:none!important}
+
+ .wrap{position:relative;z-index:1}
+ .topbar{
+ position:sticky;top:0;z-index:20;
+ backdrop-filter:blur(18px);
+ background:rgba(7,7,7,.82);
+ border-bottom:1px solid var(--line);
+ }
+ .nav{
+ max-width:var(--max);
+ margin:0 auto;
+ padding:15px 30px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:28px;
+ }
+ .brand{
+ font-size:25px;
+ font-weight:800;
+ letter-spacing:-.03em;
+ white-space:nowrap;
+ }
+ .brand sup{color:var(--accent);font-size:.48em}
+ .navlinks{display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end}
+ .navlinks a{
+ color:var(--muted);
+ text-decoration:none;
+ font-size:13px;
+ line-height:1.2;
+ }
+ .navlinks a:hover{color:var(--ivory)}
+
+ main{max-width:var(--max);margin:0 auto;padding:0 30px 100px}
+ section{
+ padding:112px 0;
+ border-bottom:1px solid rgba(244,234,220,.09);
+ position:relative;
+ isolation:isolate;
+ clear:both;
+ }
+
+ /* Premium abstract section art. No fake photos. */
+ section:before{
+ content:"";
+ position:absolute;
+ right:-120px;
+ top:82px;
+ width:420px;
+ height:420px;
+ pointer-events:none;
+ z-index:-1;
+ opacity:.22;
+ background:
+ radial-gradient(ellipse at 50% 50%, transparent 0 34%, rgba(244,234,220,.28) 34.3% 34.8%, transparent 35.2%),
+ radial-gradient(ellipse at 50% 50%, transparent 0 46%, rgba(156,175,150,.26) 46.2% 46.6%, transparent 47%),
+ radial-gradient(ellipse at 50% 50%, rgba(185,121,93,.10), transparent 60%);
+ border-radius:50%;
+ }
+ section:nth-of-type(3n):before{
+ left:-170px;right:auto;top:140px;
+ width:560px;height:360px;
+ opacity:.16;
+ border-radius:52% 48% 54% 46%;
+ transform:rotate(-14deg);
+ background:
+ radial-gradient(ellipse at 50% 50%, transparent 0 31%, rgba(244,234,220,.32) 31.3% 31.8%, transparent 32.2%),
+ radial-gradient(ellipse at 52% 48%, rgba(156,175,150,.16), transparent 60%);
+ }
+ section:nth-of-type(4n){
+ background:
+ radial-gradient(circle at 88% 20%, rgba(16,24,32,.22), transparent 32%),
+ linear-gradient(180deg, rgba(255,255,255,.012), rgba(0,0,0,0));
+ box-shadow:0 0 0 100vmax rgba(255,255,255,.004);
+ clip-path:inset(0 -100vmax);
+ }
+ section:nth-of-type(4n+1){
+ background:
+ radial-gradient(circle at 88% 20%, rgba(156,175,150,.055), transparent 32%),
+ linear-gradient(180deg, rgba(156,175,150,.012), rgba(0,0,0,0));
+ box-shadow:0 0 0 100vmax rgba(156,175,150,.008);
+ clip-path:inset(0 -100vmax);
+ }
+ section:nth-of-type(4n+2){
+ background:
+ radial-gradient(circle at 8% 24%, rgba(185,121,93,.050), transparent 30%),
+ linear-gradient(180deg, rgba(185,121,93,.010), rgba(0,0,0,0));
+ box-shadow:0 0 0 100vmax rgba(185,121,93,.006);
+ clip-path:inset(0 -100vmax);
+ }
+
+ h1,h2,h3,p{margin-top:0}
+ .kicker{
+ color:var(--accent);
+ font-size:11px;
+ font-weight:800;
+ text-transform:uppercase;
+ letter-spacing:.15em;
+ margin-bottom:22px;
+ line-height:1.45;
+ }
+ .tag{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ color:var(--accent);
+ border:1px solid rgba(156,175,150,.30);
+ border-radius:999px;
+ padding:8px 13px;
+ background:rgba(156,175,150,.045);
+ font-size:12.5px;
+ font-weight:700;
+ max-width:100%;
+ margin-bottom:34px;
+ position:relative;
+ z-index:2;
+ }
+ .dot{
+ width:7px;height:7px;border-radius:50%;
+ background:var(--accent);
+ box-shadow:0 0 15px rgba(156,175,150,.42);
+ flex:0 0 auto;
+ }
+
+ h1{
+ font-size:clamp(64px,9.4vw,142px);
+ line-height:.92;
+ letter-spacing:-.04em;
+ margin:0 0 36px;
+ font-weight:820;
+ }
+ h1 sup,.brand-final sup{
+ color:var(--accent);
+ font-size:.38em;
+ position:relative;
+ top:-.62em;
+ margin-left:.03em;
+ }
+
+ .hero{
+ min-height:92vh;
+ display:flex;
+ align-items:center;
+ padding-top:76px;
+ }
+ .hero-grid{
+ display:grid;
+ grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+ gap:76px;
+ align-items:center;
+ width:100%;
+ }
+ .hero-title{
+ font-size:clamp(36px,4.3vw,64px);
+ line-height:1.08;
+ letter-spacing:-.035em;
+ max-width:860px;
+ margin:0 0 32px;
+ font-weight:790;
+ }
+ .lead{
+ color:var(--paper);
+ font-size:clamp(16px,1.45vw,20px);
+ line-height:1.75;
+ max-width:900px;
+ margin-bottom:22px;
+ }
+ .sublead{
+ color:var(--muted);
+ font-size:15px;
+ line-height:1.75;
+ max-width:860px;
+ }
+
+ .hero-panel{
+ position:relative;
+ min-height:540px;
+ overflow:hidden;
+ border-radius:38px;
+ border:1px solid var(--line-strong);
+ box-shadow:var(--shadow);
+ padding:44px;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
+ gap:40px;
+ background:
+ radial-gradient(circle at 78% 18%, rgba(156,175,150,.18), transparent 28%),
+ radial-gradient(circle at 18% 82%, rgba(185,121,93,.10), transparent 34%),
+ linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.014));
+ }
+ .hero-panel:before{
+ content:"";
+ position:absolute;
+ right:-135px;
+ top:-20px;
+ width:430px;
+ height:600px;
+ border-radius:48% 52% 44% 56%;
+ transform:rotate(-8deg);
+ background:
+ radial-gradient(ellipse at 50% 52%, transparent 0 30%, rgba(244,234,220,.24) 30.4% 31%, transparent 31.5%),
+ radial-gradient(ellipse at 50% 54%, transparent 0 42%, rgba(156,175,150,.24) 42.4% 43%, transparent 43.5%),
+ radial-gradient(ellipse at 54% 48%, rgba(185,121,93,.12), transparent 61%);
+ opacity:.80;
+ }
+ .hero-panel:after{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:
+ linear-gradient(90deg, transparent 49%, rgba(244,234,220,.030) 50%, transparent 51%),
+ linear-gradient(transparent 49%, rgba(244,234,220,.024) 50%, transparent 51%);
+ background-size:96px 96px;
+ opacity:.28;
+ mask-image:radial-gradient(circle at 60% 36%, #000, transparent 72%);
+ }
+ .hero-panel>*{position:relative;z-index:1}
+ .formula{
+ font-size:clamp(30px,3.6vw,48px);
+ line-height:1.16;
+ letter-spacing:-.032em;
+ font-weight:810;
+ }
+ .formula span{color:var(--accent)}
+ .panel-note{
+ color:var(--paper);
+ border-left:2px solid var(--accent2);
+ padding-left:20px;
+ font-size:16px;
+ line-height:1.82;
+ max-width:500px;
+ font-family:Georgia,"Times New Roman",serif;
+ font-style:italic;
+ }
+
+ .pillrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+ .pill{
+ border:1px solid rgba(156,175,150,.30);
+ border-radius:999px;
+ color:var(--accent);
+ padding:8px 13px;
+ background:rgba(156,175,150,.042);
+ font-size:12.5px;
+ line-height:1.2;
+ white-space:nowrap;
+ }
+
+ .section-title{
+ font-size:clamp(32px,4.2vw,58px);
+ line-height:1.12;
+ letter-spacing:-.035em;
+ max-width:1080px;
+ margin-bottom:30px;
+ font-weight:790;
+ }
+ .section-lead{
+ font-size:clamp(16px,1.45vw,20px);
+ color:var(--paper);
+ line-height:1.78;
+ max-width:990px;
+ margin-bottom:52px;
+ }
+ strong,b{color:var(--milk);font-weight:820}
+ em{
+ color:var(--accent3);
+ font-style:italic;
+ font-family:Georgia,"Times New Roman",serif;
+ letter-spacing:-.01em;
+ }
+ u,.underline{
+ text-decoration:none;
+ background:linear-gradient(to top, rgba(185,121,93,.30) 0 34%, transparent 35%);
+ padding:0 .08em;
+ }
+ .mark{
+ color:var(--accent3);
+ font-weight:820;
+ background:linear-gradient(to top, rgba(156,175,150,.30) 0 38%, transparent 39%);
+ padding:0 .08em;
+ }
+ .green{color:var(--accent)}
+ .gold{color:var(--accent2)}
+ .muted{color:var(--muted)}
+ .dim{color:var(--dim)}
+
+ .quote{
+ font-size:clamp(29px,3.7vw,52px);
+ line-height:1.18;
+ letter-spacing:-.04em;
+ font-weight:790;
+ max-width:1080px;
+ margin:58px 0;
+ }
+ .quote em{font-weight:500}
+
+ .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+ .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+ .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+ .card{
+ background:
+ radial-gradient(circle at 100% 0%, rgba(156,175,150,.035), transparent 42%),
+ linear-gradient(180deg, rgba(255,255,255,.038), rgba(255,255,255,.014));
+ border:1px solid var(--line);
+ border-radius:28px;
+ padding:30px;
+ min-width:0;
+ box-shadow:0 16px 48px rgba(0,0,0,.15);
+ position:relative;
+ overflow:hidden;
+ }
+ .card:after{
+ content:"";
+ position:absolute;
+ right:-70px;
+ bottom:-70px;
+ width:180px;
+ height:180px;
+ border-radius:50%;
+ border:1px solid rgba(244,234,220,.07);
+ pointer-events:none;
+ }
+ .card h3{
+ font-size:21px;
+ line-height:1.28;
+ margin-bottom:16px;
+ letter-spacing:-.015em;
+ font-weight:760;
+ position:relative;
+ z-index:1;
+ }
+ .card p{
+ color:var(--muted);
+ margin-bottom:0;
+ line-height:1.78;
+ font-size:14.5px;
+ position:relative;
+ z-index:1;
+ }
+ .num{
+ font-size:36px;
+ line-height:1.1;
+ color:var(--accent);
+ font-weight:820;
+ letter-spacing:-.025em;
+ margin-bottom:18px;
+ overflow-wrap:anywhere;
+ position:relative;
+ z-index:1;
+ }
+ .small-title{
+ color:var(--accent2);
+ text-transform:uppercase;
+ letter-spacing:.12em;
+ font-weight:800;
+ font-size:11px;
+ margin-bottom:16px;
+ line-height:1.4;
+ }
+
+ .callout{
+ border-left:3px solid var(--accent2);
+ padding:24px 0 24px 30px;
+ font-size:clamp(21px,2.15vw,28px);
+ line-height:1.48;
+ font-weight:720;
+ color:var(--milk);
+ max-width:1060px;
+ margin:56px 0 0;
+ font-style:italic;
+ font-family:Georgia,"Times New Roman",serif;
+ }
+ .story-block{
+ background:
+ radial-gradient(circle at 100% 0%, rgba(156,175,150,.045), transparent 42%),
+ linear-gradient(180deg, rgba(244,234,220,.040), rgba(255,255,255,.014));
+ border:1px solid var(--line);
+ border-radius:34px;
+ padding:44px;
+ margin-top:52px;
+ max-width:100%;
+ position:relative;
+ overflow:hidden;
+ }
+ .story-block:after{
+ content:"";
+ position:absolute;
+ right:-160px;
+ top:-140px;
+ width:420px;
+ height:420px;
+ border-radius:50%;
+ background:
+ radial-gradient(ellipse at 50% 50%, transparent 0 36%, rgba(244,234,220,.18) 36.4% 37%, transparent 37.4%),
+ radial-gradient(circle, rgba(185,121,93,.07), transparent 62%);
+ }
+ .story-block p{
+ color:var(--paper);
+ font-size:16.5px;
+ line-height:1.84;
+ max-width:1000px;
+ position:relative;
+ z-index:1;
+ }
+ .story-block p:last-child{margin-bottom:0}
+
+ .flow{display:grid;gap:22px;margin-top:40px}
+ .flow-row{
+ display:grid;
+ grid-template-columns:205px minmax(0,1fr);
+ gap:32px;
+ align-items:start;
+ padding:28px 30px;
+ border:1px solid var(--line);
+ border-radius:26px;
+ background:rgba(255,255,255,.022);
+ position:relative;
+ overflow:hidden;
+ }
+ .flow-row:after{
+ content:"";
+ position:absolute;
+ right:-120px;
+ top:-120px;
+ width:260px;height:260px;
+ border-radius:50%;
+ border:1px solid rgba(156,175,150,.08);
+ }
+ .flow-row strong{
+ color:var(--accent);
+ font-size:17px;
+ line-height:1.35;
+ position:relative;
+ }
+ .flow-row p{
+ margin:0;
+ color:var(--muted);
+ line-height:1.78;
+ font-size:14.8px;
+ position:relative;
+ }
+
+ .comparison{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:30px;
+ margin-top:42px;
+ }
+ .comparison .col{
+ border:1px solid var(--line);
+ border-radius:30px;
+ background:rgba(255,255,255,.022);
+ padding:34px;
+ min-width:0;
+ }
+ .comparison h3{
+ font-size:27px;
+ line-height:1.2;
+ margin-bottom:24px;
+ letter-spacing:-.02em;
+ }
+ .comparison ul{list-style:none;padding:0;margin:0;display:grid;gap:17px}
+ .comparison li{
+ padding-top:17px;
+ border-top:1px solid rgba(244,234,220,.10);
+ color:var(--muted);
+ line-height:1.74;
+ font-size:14.8px;
+ }
+ .comparison b{color:var(--milk)}
+
+ .metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+ .metric{
+ padding:30px;
+ border-radius:28px;
+ background:linear-gradient(180deg, rgba(244,234,220,.034), rgba(255,255,255,.014));
+ border:1px solid var(--line);
+ min-width:0;
+ }
+ .metric .big{
+ color:var(--accent);
+ font-size:37px;
+ line-height:1.1;
+ font-weight:820;
+ margin-bottom:18px;
+ overflow-wrap:anywhere;
+ }
+ .metric p{color:var(--muted);margin:0;font-size:14.5px;line-height:1.68}
+
+ .network{
+ position:relative;
+ min-height:560px;
+ border-radius:38px;
+ border:1px solid var(--line-strong);
+ overflow:hidden;
+ background:
+ radial-gradient(circle at 54% 48%, rgba(156,175,150,.14), transparent 32%),
+ radial-gradient(circle at 80% 20%, rgba(185,121,93,.08), transparent 28%),
+ linear-gradient(180deg, rgba(244,234,220,.035), rgba(255,255,255,.012));
+ box-shadow:var(--shadow);
+ margin-top:36px;
+ }
+ .network:before{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:
+ linear-gradient(60deg, transparent 49%, rgba(156,175,150,.10) 50%, transparent 51%),
+ linear-gradient(120deg, transparent 49%, rgba(244,234,220,.06) 50%, transparent 51%);
+ background-size:170px 170px;
+ opacity:.38;
+ mask-image:radial-gradient(circle at 50% 50%, #000, transparent 68%);
+ }
+ .network svg{opacity:.35}
+ .network-center{
+ position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+ width:210px;height:210px;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;text-align:center;
+ background:rgba(7,7,7,.88);
+ border:1px solid var(--line-strong);
+ color:var(--accent);
+ font-size:33px;
+ line-height:1.12;
+ font-weight:820;
+ letter-spacing:-.03em;
+ box-shadow:0 0 100px rgba(156,175,150,.10);
+ }
+
+ .economics{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:28px;
+ margin-top:44px;
+ }
+ .scenario{
+ padding:32px;
+ border-radius:30px;
+ background:linear-gradient(180deg, rgba(244,234,220,.040), rgba(255,255,255,.014));
+ border:1px solid var(--line);
+ min-width:0;
+ }
+ .scenario h3{font-size:22px;margin-bottom:18px;line-height:1.25}
+ .scenario .big{
+ font-size:38px;
+ color:var(--accent);
+ font-weight:820;
+ line-height:1.1;
+ margin-bottom:20px;
+ overflow-wrap:anywhere;
+ }
+ .scenario p{color:var(--muted);font-size:14.5px;line-height:1.78;margin:0}
+
+ .ask{
+ display:grid;
+ grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);
+ gap:34px;
+ align-items:stretch;
+ margin-top:44px;
+ }
+ .ask-main{
+ border-radius:36px;
+ border:1px solid var(--line-strong);
+ background:
+ radial-gradient(circle at 80% 8%, rgba(185,121,93,.09), transparent 38%),
+ linear-gradient(180deg, rgba(244,234,220,.055), rgba(255,255,255,.018));
+ padding:40px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ min-height:400px;
+ box-shadow:var(--shadow);
+ min-width:0;
+ }
+ .rub{
+ font-size:clamp(52px,6.4vw,86px);
+ line-height:1.08;
+ font-weight:820;
+ letter-spacing:-.035em;
+ margin-bottom:24px;
+ overflow-wrap:anywhere;
+ }
+ .alloc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+
+ .talk-track{display:grid;gap:22px;margin-top:42px}
+ .qa{
+ background:rgba(255,255,255,.023);
+ border:1px solid var(--line);
+ border-radius:26px;
+ padding:30px;
+ position:relative;
+ overflow:hidden;
+ }
+ .qa:before{
+ content:"";
+ position:absolute;
+ width:130px;height:130px;
+ right:-46px;top:-46px;
+ border-radius:50%;
+ background:radial-gradient(circle, rgba(185,121,93,.075), transparent 68%);
+ }
+ .qa h3{
+ color:var(--accent);
+ margin-bottom:16px;
+ font-size:19px;
+ line-height:1.35;
+ position:relative;
+ }
+ .qa p{
+ color:var(--paper);
+ margin:0;
+ line-height:1.78;
+ font-size:14.8px;
+ position:relative;
+ }
+
+ .final{text-align:center;padding:120px 20px}
+ .brand-final{
+ font-size:clamp(72px,11vw,142px);
+ line-height:.9;
+ font-weight:820;
+ letter-spacing:-.05em;
+ margin-bottom:44px;
+ }
+ .sources{font-size:13px;color:var(--muted);line-height:1.72}
+ .sources li{margin-bottom:15px}
+ a{color:var(--accent)}
+
+ @media(max-width:1080px){
+ .grid-4,.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero-grid{grid-template-columns:1fr}
+ .hero-panel{min-height:420px}
+ }
+ @media(max-width:760px){
+ .nav{align-items:flex-start;padding:14px 16px}
+ .navlinks{display:none}
+ main{padding:0 16px 80px}
+ section{padding:78px 0}
+ .hero{min-height:auto;padding-top:64px}
+ .grid-2,.grid-3,.grid-4,.metric-grid,.comparison,.ask,.economics,.alloc{grid-template-columns:1fr}
+ .flow-row{grid-template-columns:1fr;gap:14px}
+ .network{min-height:420px}
+ .network-center{width:160px;height:160px;font-size:25px}
+ .quote{font-size:31px}
+ .callout{font-size:22px}
+ .card,.story-block,.comparison .col,.qa{padding:24px}
+ .hero-panel{padding:28px}
+ .pill{white-space:normal}
+ .tag{font-size:12px;margin-bottom:24px}
+ h1{font-size:72px}
+ }
+ 
+    /* V11: premium matte glass cards */
+    .card,
+    .metric,
+    .scenario,
+    .comparison .col,
+    .qa,
+    .story-block,
+    .ask-main,
+    .hero-panel,
+    .flow-row {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.030) 42%, rgba(255,255,255,.018)) !important;
+      border:1px solid rgba(244,234,220,.20) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        inset 0 -1px 0 rgba(255,255,255,.035),
+        0 22px 70px rgba(0,0,0,.30) !important;
+      backdrop-filter: blur(18px) saturate(130%);
+      -webkit-backdrop-filter: blur(18px) saturate(130%);
+    }
+
+    .card,
+    .metric,
+    .scenario,
+    .comparison .col,
+    .qa,
+    .flow-row {
+      border-radius:30px !important;
+    }
+
+    .story-block,
+    .ask-main,
+    .hero-panel {
+      border-radius:38px !important;
+    }
+
+    .card:before,
+    .metric:before,
+    .scenario:before,
+    .comparison .col:before,
+    .qa:before,
+    .story-block:before,
+    .ask-main:before,
+    .flow-row:before {
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:inherit;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(255,255,255,.18), transparent 32%),
+        radial-gradient(circle at 92% 10%, rgba(156,175,150,.13), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,.08), transparent 42%);
+      opacity:.62;
+      z-index:0;
+    }
+
+    .card > *,
+    .metric > *,
+    .scenario > *,
+    .comparison .col > *,
+    .qa > *,
+    .story-block > *,
+    .ask-main > *,
+    .flow-row > * {
+      position:relative;
+      z-index:1;
+    }
+
+    .card:after,
+    .metric:after,
+    .scenario:after,
+    .comparison .col:after,
+    .qa:after,
+    .story-block:after,
+    .ask-main:after,
+    .flow-row:after {
+      content:"";
+      position:absolute;
+      inset:1px;
+      pointer-events:none;
+      border-radius:inherit;
+      border:1px solid rgba(255,255,255,.055);
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.10), transparent 22%, transparent 74%, rgba(255,255,255,.045));
+      z-index:0;
+    }
+
+    .card:hover,
+    .metric:hover,
+    .scenario:hover,
+    .comparison .col:hover,
+    .qa:hover {
+      border-color:rgba(244,234,220,.30) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.22),
+        0 30px 90px rgba(0,0,0,.38),
+        0 0 0 1px rgba(156,175,150,.08) !important;
+      transform: translateY(-1px);
+      transition: .22s ease;
+    }
+
+    .card h3,
+    .comparison h3,
+    .qa h3,
+    .scenario h3 {
+      color:var(--ivory);
+    }
+
+    .num,
+    .metric .big,
+    .scenario .big {
+      text-shadow:0 0 24px rgba(156,175,150,.18);
+    }
+
+    .pill,
+    .tag {
+      background:rgba(255,255,255,.055) !important;
+      border-color:rgba(244,234,220,.20) !important;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 10px 30px rgba(0,0,0,.18);
+    }
+
+    .network {
+      background:
+        radial-gradient(circle at 54% 48%, rgba(156,175,150,.18), transparent 32%),
+        linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.018)) !important;
+      border:1px solid rgba(244,234,220,.20) !important;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.16),
+        0 30px 90px rgba(0,0,0,.35) !important;
+    }
+
+    .network-center {
+      background:rgba(7,7,7,.62) !important;
+      backdrop-filter: blur(20px) saturate(130%);
+      -webkit-backdrop-filter: blur(20px) saturate(130%);
+      border:1px solid rgba(244,234,220,.24) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.16),
+        0 0 90px rgba(156,175,150,.12) !important;
+    }
+
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .card,
+      .metric,
+      .scenario,
+      .comparison .col,
+      .qa,
+      .story-block,
+      .ask-main,
+      .hero-panel,
+      .flow-row {
+        background:rgba(22,24,23,.88) !important;
+      }
+    }
+
+    /* V12: polished glass — remove decorative noise, make text feel printed on matte glass */
+    .card:before,
+    .card:after,
+    .metric:before,
+    .metric:after,
+    .scenario:before,
+    .scenario:after,
+    .comparison .col:before,
+    .comparison .col:after,
+    .qa:before,
+    .qa:after,
+    .story-block:before,
+    .story-block:after,
+    .ask-main:before,
+    .ask-main:after,
+    .flow-row:before,
+    .flow-row:after,
+    section:before,
+    .hero-panel:before,
+    .hero-panel:after {
+      display:none !important;
+      content:none !important;
+    }
+
+    .card,
+    .metric,
+    .scenario,
+    .comparison .col,
+    .qa,
+    .story-block,
+    .ask-main,
+    .hero-panel,
+    .flow-row {
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.082), rgba(255,255,255,.033) 46%, rgba(255,255,255,.018)) !important;
+      border:1px solid rgba(244,234,220,.145) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.125),
+        inset 0 -1px 0 rgba(0,0,0,.22),
+        0 24px 72px rgba(0,0,0,.28) !important;
+      backdrop-filter: blur(22px) saturate(115%);
+      -webkit-backdrop-filter: blur(22px) saturate(115%);
+    }
+
+    .card,
+    .metric,
+    .scenario,
+    .comparison .col,
+    .qa,
+    .flow-row {
+      border-radius:26px !important;
+    }
+
+    .story-block,
+    .ask-main,
+    .hero-panel {
+      border-radius:34px !important;
+    }
+
+    /* Single clean glass highlight, not a decorative object */
+    .card .glass-line,
+    .metric .glass-line,
+    .scenario .glass-line,
+    .comparison .col .glass-line,
+    .qa .glass-line,
+    .flow-row .glass-line {
+      display:none;
+    }
+
+    .card,
+    .metric,
+    .scenario,
+    .comparison .col,
+    .qa,
+    .flow-row,
+    .story-block,
+    .ask-main {
+      background-clip: padding-box;
+    }
+
+    /* Text printed/etched on glass: no floating text feeling */
+    .card h3,
+    .comparison h3,
+    .qa h3,
+    .scenario h3,
+    .flow-row strong {
+      color:rgba(245,239,231,.92) !important;
+      font-weight:720 !important;
+      letter-spacing:-.006em !important;
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.035),
+        0 -1px 0 rgba(0,0,0,.35) !important;
+    }
+
+    .card p,
+    .comparison li,
+    .qa p,
+    .scenario p,
+    .flow-row p,
+    .story-block p,
+    .metric p {
+      color:rgba(221,213,202,.74) !important;
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.025),
+        0 -1px 0 rgba(0,0,0,.28) !important;
+    }
+
+    .num,
+    .metric .big,
+    .scenario .big {
+      color:rgba(156,175,150,.96) !important;
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.035),
+        0 0 18px rgba(156,175,150,.10) !important;
+      font-weight:760 !important;
+    }
+
+    .small-title,
+    .kicker {
+      color:rgba(185,121,93,.95) !important;
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.025),
+        0 -1px 0 rgba(0,0,0,.30) !important;
+    }
+
+    /* Minimal top edge to sell glass surface */
+    .card,
+    .metric,
+    .scenario,
+    .comparison .col,
+    .qa,
+    .flow-row {
+      outline:1px solid rgba(255,255,255,.028);
+      outline-offset:-2px;
+    }
+
+    .story-block,
+    .ask-main,
+    .hero-panel {
+      outline:1px solid rgba(255,255,255,.032);
+      outline-offset:-2px;
+    }
+
+    /* Remove hover jump: investors need calm premium, not UI toy */
+    .card:hover,
+    .metric:hover,
+    .scenario:hover,
+    .comparison .col:hover,
+    .qa:hover {
+      transform:none !important;
+      border-color:rgba(244,234,220,.18) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 -1px 0 rgba(0,0,0,.22),
+        0 24px 72px rgba(0,0,0,.30) !important;
+      transition:none !important;
+    }
+
+    .pill,
+    .tag {
+      background:rgba(255,255,255,.045) !important;
+      border:1px solid rgba(244,234,220,.13) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 12px 32px rgba(0,0,0,.15) !important;
+      backdrop-filter: blur(18px) saturate(112%);
+      -webkit-backdrop-filter: blur(18px) saturate(112%);
+      color:rgba(245,239,231,.82) !important;
+    }
+
+    .dot {
+      background:rgba(156,175,150,.85) !important;
+      box-shadow:none !important;
+    }
+
+    .network {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.068), rgba(255,255,255,.018)),
+        radial-gradient(circle at 52% 48%, rgba(156,175,150,.10), transparent 34%) !important;
+      border:1px solid rgba(244,234,220,.145) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 26px 76px rgba(0,0,0,.30) !important;
+      backdrop-filter: blur(22px) saturate(112%);
+      -webkit-backdrop-filter: blur(22px) saturate(112%);
+    }
+
+    .network:before {
+      display:none !important;
+    }
+
+    .network svg {
+      opacity:.22 !important;
+      filter: grayscale(.25);
+    }
+
+    .network-center {
+      background:rgba(255,255,255,.045) !important;
+      border:1px solid rgba(244,234,220,.16) !important;
+      color:rgba(245,239,231,.88) !important;
+      backdrop-filter: blur(24px) saturate(110%);
+      -webkit-backdrop-filter: blur(24px) saturate(110%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 18px 60px rgba(0,0,0,.25) !important;
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.035),
+        0 -1px 0 rgba(0,0,0,.32) !important;
+    }
+
+    /* Make sections cleaner after removing decorative circles */
+    section:nth-of-type(4n),
+    section:nth-of-type(4n+1),
+    section:nth-of-type(4n+2) {
+      background:none !important;
+      box-shadow:none !important;
+      clip-path:none !important;
+    }
+
+    section {
+      border-bottom:1px solid rgba(244,234,220,.075) !important;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 80% 4%, rgba(156,175,150,.075), transparent 28%),
+        radial-gradient(circle at 8% 36%, rgba(185,121,93,.045), transparent 30%),
+        linear-gradient(180deg, #070707 0%, #0a0a0a 42%, #070707 100%) !important;
+    }
+
+    /* Fallback */
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .card,
+      .metric,
+      .scenario,
+      .comparison .col,
+      .qa,
+      .story-block,
+      .ask-main,
+      .hero-panel,
+      .flow-row {
+        background:rgba(18,20,19,.92) !important;
+      }
+    }
+
+    /* Color variant: v13_orange_copper */
+    :root {
+      
+      --accent:#ff7a1a;
+      --accent2:#ff3d6e;
+      --accent3:#fff1e5;
+      --accent-rgb:255,122,26;
+      --accent2-rgb:255,61,110;
+      --line:rgba(255,154,86,.16);
+      --line-strong:rgba(255,154,86,.24);
+
+    }
+    .num,
+    .metric .big,
+    .scenario .big,
+    .brand sup,
+    h1 sup,
+    .brand-final sup {
+      color:var(--accent) !important;
+    }
+    .kicker,
+    .small-title {
+      color:var(--accent2) !important;
+    }
+    .pill,
+    .tag {
+      color:rgba(245,239,231,.84) !important;
+      border-color:rgba(var(--accent-rgb), .22) !important;
+      background:rgba(var(--accent-rgb), .055) !important;
+    }
+    .dot {
+      background:var(--accent) !important;
+    }
+    .mark {
+      background:linear-gradient(to top, rgba(var(--accent-rgb), .28) 0 38%, transparent 39%) !important;
+    }
+    u,.underline {
+      background:linear-gradient(to top, rgba(var(--accent2-rgb), .30) 0 34%, transparent 35%) !important;
+    }
+    .callout,
+    .panel-note,
+    .visual-caption {
+      border-left-color:var(--accent2) !important;
+    }
+    .network-center {
+      color:rgba(245,239,231,.90) !important;
+    }
+    body {
+      background:
+        radial-gradient(circle at 80% 4%, rgba(var(--accent-rgb), .090), transparent 28%),
+        radial-gradient(circle at 8% 36%, rgba(var(--accent2-rgb), .060), transparent 30%),
+        linear-gradient(180deg, #070707 0%, #0a0a0a 42%, #070707 100%) !important;
+    }
+
+    /* V14: stronger concept, denser hero, modern sans reading type */
+    :root {
+      --accent:#ff7a1a;
+      --accent2:#ff3d6e;
+      --accent3:#fff1e5;
+      --accent-rgb:255,122,26;
+      --accent2-rgb:255,61,110;
+
+      --body-font:"Inter Tight","Inter","Manrope","Aptos","Segoe UI Variable","Segoe UI",Roboto,Arial,sans-serif;
+      --display-font:"Inter Tight","Manrope","Aptos Display","Segoe UI Variable Display","Segoe UI",Roboto,Arial,sans-serif;
+      --text-soft:rgba(236,228,218,.78);
+      --text-dim:rgba(236,228,218,.56);
+    }
+
+    body,
+    p,
+    li,
+    .lead,
+    .sublead,
+    .section-lead,
+    .card p,
+    .comparison li,
+    .qa p,
+    .flow-row p,
+    .story-block p,
+    .metric p,
+    .scenario p {
+      font-family:var(--body-font) !important;
+      font-size:14.6px !important;
+      line-height:1.66 !important;
+      letter-spacing:.002em !important;
+    }
+
+    .lead,
+    .section-lead {
+      font-size:clamp(15.4px,1.25vw,18px) !important;
+      line-height:1.66 !important;
+      max-width:920px !important;
+    }
+
+    .sublead {
+      font-size:14.4px !important;
+      line-height:1.64 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    .hero-title,
+    .section-title,
+    .formula,
+    .brand,
+    .brand-final,
+    .num,
+    .metric .big,
+    .scenario .big,
+    .rub {
+      font-family:var(--display-font) !important;
+    }
+
+    .hero {
+      min-height:86vh !important;
+      padding-top:54px !important;
+    }
+
+    .hero-grid {
+      grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr) !important;
+      gap:54px !important;
+      align-items:center !important;
+    }
+
+    h1 {
+      font-size:clamp(68px,10vw,156px) !important;
+      margin-bottom:24px !important;
+      letter-spacing:-.055em !important;
+    }
+
+    .hero-title {
+      font-size:clamp(38px,4.6vw,68px) !important;
+      line-height:1.02 !important;
+      margin-bottom:24px !important;
+      letter-spacing:-.052em !important;
+      max-width:900px !important;
+      font-weight:840 !important;
+    }
+
+    .tag {
+      margin-bottom:24px !important;
+      font-family:var(--body-font) !important;
+      letter-spacing:.06em !important;
+      text-transform:uppercase;
+      font-size:11px !important;
+      color:rgba(255,241,229,.78) !important;
+    }
+
+    .pillrow {
+      margin-top:26px !important;
+      gap:10px !important;
+    }
+
+    .pill {
+      font-family:var(--body-font) !important;
+      font-size:11.4px !important;
+      padding:8px 11px !important;
+      color:rgba(255,241,229,.78) !important;
+    }
+
+    .hero-panel {
+      min-height:0 !important;
+      height:auto !important;
+      padding:30px !important;
+      gap:22px !important;
+      justify-content:flex-start !important;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.095), rgba(255,255,255,.035) 48%, rgba(255,255,255,.018)),
+        radial-gradient(circle at 82% 12%, rgba(255,122,26,.18), transparent 32%),
+        radial-gradient(circle at 8% 96%, rgba(255,61,110,.10), transparent 36%) !important;
+      border:1px solid rgba(255,154,86,.22) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 -1px 0 rgba(0,0,0,.26),
+        0 28px 82px rgba(0,0,0,.32) !important;
+      border-radius:34px !important;
+      backdrop-filter:blur(22px) saturate(118%);
+      -webkit-backdrop-filter:blur(22px) saturate(118%);
+    }
+
+    .hero-panel:before,
+    .hero-panel:after {
+      display:none !important;
+      content:none !important;
+    }
+
+    .formula {
+      font-size:clamp(30px,3.7vw,50px) !important;
+      line-height:1.04 !important;
+      letter-spacing:-.055em !important;
+      font-weight:860 !important;
+      margin-bottom:0 !important;
+    }
+
+    .formula span {
+      color:var(--accent) !important;
+    }
+
+    .hero-stack {
+      display:grid;
+      gap:10px;
+      margin:6px 0 2px;
+    }
+
+    .hero-micro-card {
+      display:grid;
+      grid-template-columns:112px minmax(0,1fr);
+      gap:16px;
+      align-items:center;
+      padding:14px 15px;
+      border-radius:18px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,241,229,.105);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .hero-micro-card b {
+      font-family:var(--display-font);
+      font-size:15px;
+      color:rgba(255,241,229,.94);
+      letter-spacing:-.02em;
+    }
+
+    .hero-micro-card span {
+      font-family:var(--body-font);
+      font-size:12.8px;
+      line-height:1.42;
+      color:rgba(236,228,218,.66);
+    }
+
+    .panel-note {
+      font-family:var(--body-font) !important;
+      font-style:normal !important;
+      font-size:13.6px !important;
+      line-height:1.58 !important;
+      color:rgba(255,241,229,.74) !important;
+      border-left:2px solid rgba(255,61,110,.80) !important;
+      padding:13px 0 13px 16px !important;
+      margin-top:2px;
+      max-width:none !important;
+    }
+
+    .small-title,
+    .kicker {
+      font-family:var(--body-font) !important;
+      font-size:10.6px !important;
+      letter-spacing:.14em !important;
+      color:rgba(255,61,110,.90) !important;
+    }
+
+    section {
+      padding:92px 0 !important;
+    }
+
+    .section-title {
+      font-size:clamp(30px,3.8vw,54px) !important;
+      line-height:1.08 !important;
+      letter-spacing:-.046em !important;
+      margin-bottom:24px !important;
+      font-weight:820 !important;
+    }
+
+    .quote {
+      font-family:var(--display-font) !important;
+      font-size:clamp(28px,3.4vw,48px) !important;
+      line-height:1.13 !important;
+      letter-spacing:-.048em !important;
+      margin:44px 0 !important;
+      font-weight:820 !important;
+    }
+
+    .card,
+    .metric,
+    .scenario,
+    .comparison .col,
+    .qa,
+    .story-block,
+    .ask-main,
+    .flow-row {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.078), rgba(255,255,255,.030) 46%, rgba(255,255,255,.016)) !important;
+      border:1px solid rgba(255,241,229,.13) !important;
+      border-radius:24px !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.105),
+        inset 0 -1px 0 rgba(0,0,0,.24),
+        0 22px 64px rgba(0,0,0,.25) !important;
+      backdrop-filter:blur(20px) saturate(115%);
+      -webkit-backdrop-filter:blur(20px) saturate(115%);
+    }
+
+    .card,
+    .metric,
+    .scenario,
+    .comparison .col,
+    .qa {
+      padding:26px !important;
+    }
+
+    .story-block,
+    .ask-main {
+      padding:36px !important;
+      border-radius:30px !important;
+    }
+
+    .card h3,
+    .comparison h3,
+    .qa h3,
+    .scenario h3 {
+      font-size:20px !important;
+      line-height:1.2 !important;
+      letter-spacing:-.024em !important;
+      color:rgba(255,241,229,.92) !important;
+      font-weight:760 !important;
+      margin-bottom:12px !important;
+    }
+
+    .card p,
+    .comparison li,
+    .qa p,
+    .scenario p,
+    .flow-row p,
+    .story-block p,
+    .metric p {
+      color:rgba(236,228,218,.66) !important;
+      text-shadow:none !important;
+    }
+
+    .num,
+    .metric .big,
+    .scenario .big {
+      color:var(--accent) !important;
+      font-size:34px !important;
+      font-weight:780 !important;
+      text-shadow:0 0 22px rgba(255,122,26,.10) !important;
+      margin-bottom:14px !important;
+    }
+
+    .grid-3 {
+      gap:22px !important;
+    }
+
+    .grid-4 {
+      gap:20px !important;
+    }
+
+    .grid-2,
+    .comparison,
+    .economics,
+    .ask {
+      gap:26px !important;
+    }
+
+    .flow {
+      gap:16px !important;
+      margin-top:30px !important;
+    }
+
+    .flow-row {
+      padding:22px 24px !important;
+      grid-template-columns:190px minmax(0,1fr) !important;
+    }
+
+    .network {
+      min-height:500px !important;
+      border-radius:30px !important;
+      border:1px solid rgba(255,241,229,.13) !important;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.050), rgba(255,255,255,.015)),
+        radial-gradient(circle at 52% 48%, rgba(255,122,26,.10), transparent 34%),
+        radial-gradient(circle at 72% 18%, rgba(255,61,110,.08), transparent 32%) !important;
+    }
+
+    .network svg g[stroke] {
+      stroke:#ff7a1a !important;
+      stroke-opacity:.16 !important;
+    }
+
+    .network svg g[fill] {
+      fill:#ff7a1a !important;
+      fill-opacity:.78 !important;
+    }
+
+    .network-center {
+      background:rgba(255,255,255,.045) !important;
+      color:rgba(255,241,229,.90) !important;
+    }
+
+    .callout {
+      font-family:var(--display-font) !important;
+      font-style:normal !important;
+      font-size:clamp(22px,2.2vw,30px) !important;
+      line-height:1.36 !important;
+      letter-spacing:-.035em !important;
+      border-left-color:var(--accent2) !important;
+      color:rgba(255,241,229,.90) !important;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 80% 4%, rgba(255,122,26,.10), transparent 28%),
+        radial-gradient(circle at 8% 36%, rgba(255,61,110,.07), transparent 30%),
+        radial-gradient(circle at 78% 82%, rgba(125,68,255,.055), transparent 32%),
+        linear-gradient(180deg, #070707 0%, #0a0a0a 42%, #070707 100%) !important;
+    }
+
+    @media(max-width:1080px) {
+      .hero-grid {
+        grid-template-columns:1fr !important;
+        gap:34px !important;
+      }
+      .hero-panel {
+        max-width:760px;
+      }
+    }
+
+    @media(max-width:760px) {
+      section {
+        padding:70px 0 !important;
+      }
+      .hero {
+        min-height:auto !important;
+        padding-top:58px !important;
+      }
+      .hero-micro-card {
+        grid-template-columns:1fr;
+        gap:4px;
+      }
+      .hero-panel {
+        padding:24px !important;
+      }
+      .flow-row {
+        grid-template-columns:1fr !important;
+      }
+      body, p, li, .lead, .section-lead, .card p {
+        font-size:14.2px !important;
+      }
+    }
+
+    /* V15: mobile header cleanup — no empty header without burger */
+    @media(max-width:760px) {
+      .topbar {
+        display:none !important;
+      }
+
+      .hero {
+        padding-top:34px !important;
+      }
+
+      main {
+        padding-top:0 !important;
+      }
+
+      .tag {
+        margin-top:0 !important;
+      }
+    }
+
+    /* V16: added high-impact investor sections */
+    .impact-section {
+      position:relative;
+    }
+
+    .thesis-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+      margin-top:34px;
+    }
+
+    .thesis-card {
+      min-height:250px;
+      padding:28px;
+      border-radius:28px;
+      border:1px solid rgba(255,241,229,.13);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.078), rgba(255,255,255,.030) 46%, rgba(255,255,255,.016));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.105),
+        inset 0 -1px 0 rgba(0,0,0,.24),
+        0 22px 64px rgba(0,0,0,.25);
+      backdrop-filter:blur(20px) saturate(115%);
+      -webkit-backdrop-filter:blur(20px) saturate(115%);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .thesis-card span {
+      color:var(--accent);
+      font-family:var(--display-font);
+      font-size:34px;
+      line-height:1;
+      font-weight:780;
+      letter-spacing:-.04em;
+    }
+
+    .thesis-card h3 {
+      color:rgba(255,241,229,.94);
+      font-family:var(--display-font);
+      font-size:25px;
+      line-height:1.12;
+      letter-spacing:-.035em;
+      margin:22px 0 12px;
+    }
+
+    .thesis-card p {
+      color:rgba(236,228,218,.66);
+      font-family:var(--body-font);
+      font-size:14.4px;
+      line-height:1.68;
+      margin:0;
+    }
+
+    .shift-stack {
+      display:grid;
+      gap:14px;
+      margin-top:36px;
+    }
+
+    .shift-row {
+      display:grid;
+      grid-template-columns:300px minmax(0,1fr);
+      gap:26px;
+      align-items:center;
+      padding:22px 24px;
+      border-radius:24px;
+      border:1px solid rgba(255,241,229,.12);
+      background:linear-gradient(145deg, rgba(255,255,255,.060), rgba(255,255,255,.020));
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .shift-row b {
+      color:rgba(255,241,229,.94);
+      font-family:var(--display-font);
+      font-size:22px;
+      line-height:1.12;
+      letter-spacing:-.035em;
+    }
+
+    .shift-row span {
+      color:rgba(236,228,218,.68);
+      font-family:var(--body-font);
+      font-size:14.6px;
+      line-height:1.6;
+    }
+
+    .before-after {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:28px;
+      margin-top:40px;
+    }
+
+    .before-block,
+    .after-block {
+      padding:34px;
+      border-radius:30px;
+      border:1px solid rgba(255,241,229,.13);
+      background:linear-gradient(145deg, rgba(255,255,255,.070), rgba(255,255,255,.020));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 24px 70px rgba(0,0,0,.26);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+    }
+
+    .after-block {
+      border-color:rgba(255,122,26,.22);
+      background:
+        radial-gradient(circle at 88% 8%, rgba(255,122,26,.10), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.078), rgba(255,255,255,.020));
+    }
+
+    .ba-label {
+      color:var(--accent2);
+      font-family:var(--body-font);
+      font-size:10.8px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+      font-weight:800;
+    }
+
+    .before-block h3,
+    .after-block h3 {
+      color:rgba(255,241,229,.94);
+      font-family:var(--display-font);
+      font-size:28px;
+      line-height:1.08;
+      letter-spacing:-.04em;
+      margin:0 0 24px;
+    }
+
+    .before-after ul {
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:14px;
+    }
+
+    .before-after li {
+      color:rgba(236,228,218,.68);
+      font-size:14.6px;
+      line-height:1.62;
+      padding-top:14px;
+      border-top:1px solid rgba(255,241,229,.10);
+    }
+
+    .graph-principles {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      margin:28px 0 20px;
+    }
+
+    .graph-principles div {
+      padding:22px;
+      border-radius:22px;
+      border:1px solid rgba(255,241,229,.12);
+      background:linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      text-align:center;
+    }
+
+    .graph-principles b {
+      display:block;
+      color:var(--accent);
+      font-family:var(--display-font);
+      font-size:21px;
+      letter-spacing:-.035em;
+      margin-bottom:6px;
+    }
+
+    .graph-principles span {
+      color:rgba(236,228,218,.62);
+      font-size:13.5px;
+    }
+
+    .roadmap {
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+      margin-top:38px;
+    }
+
+    .roadmap-item {
+      padding:26px;
+      border-radius:26px;
+      border:1px solid rgba(255,241,229,.13);
+      background:linear-gradient(145deg, rgba(255,255,255,.066), rgba(255,255,255,.018));
+      min-height:260px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      gap:12px;
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .roadmap-item span {
+      color:var(--accent2);
+      font-size:11px;
+      font-weight:820;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .roadmap-item h3 {
+      color:rgba(255,241,229,.94);
+      font-family:var(--display-font);
+      font-size:22px;
+      line-height:1.12;
+      letter-spacing:-.035em;
+      margin:0;
+    }
+
+    .roadmap-item p {
+      color:rgba(236,228,218,.66);
+      font-size:14px;
+      line-height:1.62;
+      margin:0;
+    }
+
+    @media(max-width:1080px) {
+      .thesis-grid,
+      .roadmap,
+      .graph-principles {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media(max-width:760px) {
+      .thesis-grid,
+      .shift-row,
+      .before-after,
+      .graph-principles,
+      .roadmap {
+        grid-template-columns:1fr;
+      }
+
+      .thesis-card,
+      .roadmap-item {
+        min-height:auto;
+      }
+
+      .shift-row {
+        gap:8px;
+      }
+    }
+
+    /* V17: delicate motion system */
+    html {
+      scroll-behavior:smooth;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity:0;
+        transform:translateY(22px);
+        transition:
+          opacity .82s cubic-bezier(.2,.7,.2,1),
+          transform .82s cubic-bezier(.2,.7,.2,1);
+        will-change:opacity, transform;
+      }
+
+      .reveal.visible {
+        opacity:1;
+        transform:translateY(0);
+      }
+
+      .reveal[data-delay="1"] { transition-delay:.08s; }
+      .reveal[data-delay="2"] { transition-delay:.16s; }
+      .reveal[data-delay="3"] { transition-delay:.24s; }
+
+      .hero-panel {
+        transition:transform .18s linear;
+        will-change:transform;
+      }
+
+      .card,
+      .thesis-card,
+      .roadmap-item,
+      .metric,
+      .scenario,
+      .qa,
+      .comparison .col,
+      .before-block,
+      .after-block {
+        transition:
+          transform .35s ease,
+          border-color .35s ease,
+          box-shadow .35s ease,
+          background .35s ease;
+      }
+
+      .card:hover,
+      .thesis-card:hover,
+      .roadmap-item:hover,
+      .metric:hover,
+      .scenario:hover,
+      .qa:hover,
+      .comparison .col:hover,
+      .before-block:hover,
+      .after-block:hover {
+        transform:translateY(-2px);
+        border-color:rgba(255,122,26,.28) !important;
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,.13),
+          0 30px 82px rgba(0,0,0,.34),
+          0 0 0 1px rgba(255,122,26,.055) !important;
+      }
+
+      .type-line {
+        display:inline-block;
+        position:relative;
+      }
+
+      .type-line.is-typing::after {
+        content:"";
+        display:inline-block;
+        width:.08em;
+        height:.92em;
+        margin-left:.08em;
+        background:var(--accent);
+        vertical-align:-.08em;
+        animation:caretBlink .9s steps(1) infinite;
+      }
+
+      @keyframes caretBlink {
+        0%, 45% { opacity:1; }
+        46%, 100% { opacity:0; }
+      }
+
+      .shift-row,
+      .flow-row {
+        background-position:0 0;
+      }
+
+      .shift-row.visible,
+      .flow-row.visible {
+        animation:glassSweep 1.15s cubic-bezier(.2,.7,.2,1) both;
+      }
+
+      @keyframes glassSweep {
+        from {
+          box-shadow:
+            inset -80px 0 90px rgba(255,255,255,.025),
+            inset 0 1px 0 rgba(255,255,255,.10),
+            0 18px 52px rgba(0,0,0,.24);
+        }
+        to {
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.10),
+            0 22px 64px rgba(0,0,0,.25);
+        }
+      }
+
+      .network.visible {
+        animation:networkBreath 5.5s ease-in-out infinite;
+      }
+
+      @keyframes networkBreath {
+        0%, 100% { box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 26px 76px rgba(0,0,0,.30); }
+        50% { box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 30px 88px rgba(0,0,0,.34), 0 0 70px rgba(255,122,26,.045); }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity:1 !important;
+        transform:none !important;
+      }
+    }
+
+    /* V18: slower, airier motion */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity:0;
+        transform:translateY(34px);
+        transition:
+          opacity 1.35s cubic-bezier(.16, .72, .18, 1),
+          transform 1.35s cubic-bezier(.16, .72, .18, 1) !important;
+      }
+
+      .reveal.visible {
+        opacity:1;
+        transform:translateY(0);
+      }
+
+      .reveal[data-delay="1"] { transition-delay:.14s !important; }
+      .reveal[data-delay="2"] { transition-delay:.28s !important; }
+      .reveal[data-delay="3"] { transition-delay:.42s !important; }
+
+      .hero-panel {
+        transition:transform .42s cubic-bezier(.16,.72,.18,1) !important;
+      }
+
+      .card,
+      .thesis-card,
+      .roadmap-item,
+      .metric,
+      .scenario,
+      .qa,
+      .comparison .col,
+      .before-block,
+      .after-block {
+        transition:
+          transform .65s cubic-bezier(.16,.72,.18,1),
+          border-color .65s cubic-bezier(.16,.72,.18,1),
+          box-shadow .65s cubic-bezier(.16,.72,.18,1),
+          background .65s cubic-bezier(.16,.72,.18,1) !important;
+      }
+
+      .card:hover,
+      .thesis-card:hover,
+      .roadmap-item:hover,
+      .metric:hover,
+      .scenario:hover,
+      .qa:hover,
+      .comparison .col:hover,
+      .before-block:hover,
+      .after-block:hover {
+        transform:translateY(-1px) !important;
+      }
+
+      .shift-row.visible,
+      .flow-row.visible {
+        animation:glassSweepSlow 1.95s cubic-bezier(.16,.72,.18,1) both !important;
+      }
+
+      @keyframes glassSweepSlow {
+        from {
+          box-shadow:
+            inset -60px 0 84px rgba(255,255,255,.020),
+            inset 0 1px 0 rgba(255,255,255,.10),
+            0 18px 52px rgba(0,0,0,.22);
+        }
+        to {
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.10),
+            0 22px 64px rgba(0,0,0,.25);
+        }
+      }
+
+      .network.visible {
+        animation:networkBreathSlow 8.5s ease-in-out infinite !important;
+      }
+
+      @keyframes networkBreathSlow {
+        0%, 100% {
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 26px 76px rgba(0,0,0,.30);
+        }
+        50% {
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 30px 88px rgba(0,0,0,.34), 0 0 52px rgba(255,122,26,.035);
+        }
+      }
+
+      .type-line.is-typing::after {
+        animation:caretBlink 1.15s steps(1) infinite !important;
+      }
+    }
+
+    /* V19: scroll-drawn underline highlights */
+    .mark,
+    u,
+    .underline {
+      position:relative;
+      z-index:1;
+      background:none !important;
+      text-decoration:none !important;
+      padding:0 .06em;
+      color:var(--accent3);
+      white-space:normal;
+    }
+
+    .mark::after,
+    u::after,
+    .underline::after {
+      content:"";
+      position:absolute;
+      left:0;
+      right:auto;
+      bottom:.08em;
+      width:0%;
+      height:.28em;
+      z-index:-1;
+      border-radius:999px;
+      background:linear-gradient(90deg, rgba(255,122,26,.62), rgba(255,61,110,.42));
+      transition:width 1.45s cubic-bezier(.16,.72,.18,1);
+      box-shadow:0 0 18px rgba(255,122,26,.08);
+    }
+
+    .mark.visible-underline::after,
+    u.visible-underline::after,
+    .underline.visible-underline::after {
+      width:100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mark::after,
+      u::after,
+      .underline::after {
+        width:100% !important;
+        transition:none !important;
+      }
+    }
+
+    /* V20: animated fill for the B³ accent */
+    .brand sup,
+    h1 sup,
+    .brand-final sup {
+      display:inline-block;
+      position:relative;
+      color:transparent !important;
+      -webkit-text-stroke: .7px rgba(255,122,26,.88);
+      text-stroke: .7px rgba(255,122,26,.88);
+      background:
+        linear-gradient(180deg, var(--accent) 0%, var(--accent2) 100%);
+      background-size:100% 0%;
+      background-repeat:no-repeat;
+      background-position:top;
+      -webkit-background-clip:text;
+      background-clip:text;
+      filter:drop-shadow(0 0 0 rgba(255,122,26,0));
+      transition:
+        background-size 1.55s cubic-bezier(.16,.72,.18,1),
+        filter 1.55s cubic-bezier(.16,.72,.18,1);
+    }
+
+    .brand sup.fill-three,
+    h1 sup.fill-three,
+    .brand-final sup.fill-three {
+      background-size:100% 100%;
+      filter:drop-shadow(0 0 12px rgba(255,122,26,.16));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brand sup,
+      h1 sup,
+      .brand-final sup {
+        background-size:100% 100% !important;
+        filter:none !important;
+      }
+    }
+
+    /* V21: fix ³ fill to cover full glyph height */
+    .brand sup,
+    h1 sup,
+    .brand-final sup {
+      color:rgba(255,122,26,.18) !important;
+      -webkit-text-stroke:.7px rgba(255,122,26,.90);
+      text-stroke:.7px rgba(255,122,26,.90);
+      background:none !important;
+      overflow:hidden;
+      line-height:1 !important;
+      padding-top:.02em;
+      padding-bottom:.02em;
+      vertical-align:super;
+    }
+
+    .brand sup::before,
+    h1 sup::before,
+    .brand-final sup::before {
+      content:"³";
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:0%;
+      overflow:hidden;
+      color:transparent;
+      -webkit-text-stroke:0;
+      text-stroke:0;
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      transition:height 1.55s cubic-bezier(.16,.72,.18,1);
+      pointer-events:none;
+    }
+
+    .brand sup.fill-three::before,
+    h1 sup.fill-three::before,
+    .brand-final sup.fill-three::before {
+      height:125%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brand sup::before,
+      h1 sup::before,
+      .brand-final sup::before {
+        height:125% !important;
+      }
+    }
+
+    /* V22: apply ³ fill everywhere Beauty³ / B³ appears */
+    .three-fill-symbol {
+      display:inline-block;
+      position:relative;
+      color:rgba(255,122,26,.18) !important;
+      -webkit-text-stroke:.045em rgba(255,122,26,.86);
+      text-stroke:.045em rgba(255,122,26,.86);
+      background:none !important;
+      overflow:hidden;
+      line-height:1 !important;
+      padding:0 .01em;
+      vertical-align:super;
+      font-size:.62em;
+      margin-left:.015em;
+    }
+
+    .three-fill-symbol::before {
+      content:"³";
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:0%;
+      overflow:hidden;
+      color:transparent;
+      -webkit-text-stroke:0;
+      text-stroke:0;
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent2) 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      transition:height 1.55s cubic-bezier(.16,.72,.18,1);
+      pointer-events:none;
+    }
+
+    .three-fill-symbol.fill-three::before {
+      height:125%;
+    }
+
+    /* Unify old logo selectors with the general class */
+    .brand sup,
+    h1 sup,
+    .brand-final sup {
+      display:inline-block;
+      position:relative;
+      overflow:hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .three-fill-symbol::before {
+        height:125% !important;
+      }
+    }
+
+    /* V23: no clipping for ³ — full glyph, fill without cut-off */
+    .three-fill-symbol,
+    .brand sup,
+    h1 sup,
+    .brand-final sup {
+      display:inline-block !important;
+      position:relative !important;
+      overflow:visible !important;
+      line-height:1.15 !important;
+      height:auto !important;
+      min-width:.48em !important;
+      padding:.05em .08em .08em .035em !important;
+      margin-left:.015em !important;
+      vertical-align:super !important;
+
+      color:rgba(255,122,26,.24) !important;
+      -webkit-text-stroke:0 !important;
+      text-stroke:0 !important;
+
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent2) 100%) !important;
+      background-size:100% 0%;
+      background-repeat:no-repeat;
+      background-position:top;
+      -webkit-background-clip:text !important;
+      background-clip:text !important;
+
+      transition:
+        background-size 1.55s cubic-bezier(.16,.72,.18,1),
+        color 1.55s cubic-bezier(.16,.72,.18,1),
+        filter 1.55s cubic-bezier(.16,.72,.18,1);
+    }
+
+    .three-fill-symbol::before,
+    .brand sup::before,
+    h1 sup::before,
+    .brand-final sup::before {
+      display:none !important;
+      content:none !important;
+    }
+
+    .three-fill-symbol.fill-three,
+    .brand sup.fill-three,
+    h1 sup.fill-three,
+    .brand-final sup.fill-three {
+      background-size:100% 100% !important;
+      color:transparent !important;
+      filter:drop-shadow(0 0 10px rgba(255,122,26,.12));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .three-fill-symbol,
+      .brand sup,
+      h1 sup,
+      .brand-final sup {
+        background-size:100% 100% !important;
+        color:transparent !important;
+        filter:none !important;
+      }
+    }
+
+    /* V24: clean head/meta and keep mobile first screen clean */
+    @media(max-width:760px) {
+      .topbar {
+        display:none !important;
+      }
+      .hero {
+        padding-top:34px !important;
+      }
+    }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+ <div class="nav">
+ <div class="brand">B<sup>³</sup></div>
+ <div class="navlinks">
+ <a href="#thesis">Тезис</a>
+ <a href="#problem">Проблема</a>
+ <a href="#solution">Решение</a>
+ <a href="#launch">Запуск</a>
+ <a href="#moat">Beauty Graph</a>
+ <a href="#talk">Тезисы</a>
+ </div>
+ </div>
+</header>
+
+<main>
+ <section class="hero reveal">
+ <div class="hero-grid">
+ <div>
+ <div class="tag"><span class="dot"></span> Beauty<sup class="three-fill-symbol">³</sup> · Trust Commerce · 2026</div>
+ <h1>B<sup>³</sup></h1>
+ <h2 class="hero-title"><span class="type-line" data-text="Превращаем доверие в продажи."></span></h2>
+ <p class="lead">
+ Beauty<sup class="three-fill-symbol">³</sup> — IT-компания, создающая инфраструктуру доверительной торговли:
+ экспертное влияние, AI-рекомендации, каталог, покупка, повторные продажи и данные — в одной системе.
+ </p>
+ <p class="sublead">
+ <strong><u>Это не ещё один beauty-маркетплейс.</u></strong> Это попытка построить слой доверия для рынков,
+ где решение о покупке принимается через эксперта.
+ </p>
+ <div class="pillrow">
+ <span class="pill">Trust Commerce</span>
+ <span class="pill">Expert-Led Commerce</span>
+ <span class="pill">Beauty Advisors</span>
+ <span class="pill">AI Recommendations</span>
+ <span class="pill">Beauty Graph</span>
+ </div>
+ </div>
+ <div class="hero-panel reveal">
+ <div>
+ <div class="small-title">Формула Beauty<sup class="three-fill-symbol">³</sup></div>
+ <div class="formula"><span>Trust</span> × Intelligence × Commerce</div>
+ </div>
+
+ <div class="hero-stack">
+  <div class="hero-micro-card reveal">
+   <b>Trust</b>
+   <span>advisor, эксперт, репутация, личное влияние</span>
+  </div>
+  <div class="hero-micro-card reveal">
+   <b>Intelligence</b>
+   <span>AI-подбор, анкета клиента, объяснение выбора</span>
+  </div>
+  <div class="hero-micro-card reveal">
+   <b>Commerce</b>
+   <span>витрина, заказ, комиссия, повторные продажи</span>
+  </div>
+ </div>
+
+ <div class="panel-note">
+ Beauty<sup class="three-fill-symbol">³</sup> превращает разрозненные рекомендации в инфраструктуру:
+ рекомендация → покупка → данные → повтор → Beauty Graph.
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section id="thesis" class="reveal">
+ <div class="kicker">Главный тезис</div>
+ <h2 class="section-title">Красота — это <em>не проблема поиска</em>. Это <span class="mark">проблема доверия</span>.</h2>
+ <p class="section-lead">
+ Покупатель не хочет выбирать из бесконечного каталога. Он хочет уверенности:
+ что это средство подойдёт именно ему, решит его задачу и не окажется случайной покупкой.
+ В beauty-индустрии такая уверенность чаще всего приходит через человека.
+ </p>
+
+ <div class="quote">
+ Люди покупают не потому, что увидели товар.
+ Люди покупают, когда <span class="green">доверяют рекомендации</span>.
+ </div>
+
+ <div class="grid-3">
+ <div class="card reveal">
+ <h3>Подруга</h3>
+ <p>«Я пользовалась — мне подошло». Это сильнее холодной рекламы, потому что рекомендация встроена в отношения.</p>
+ </div>
+ <div class="card reveal">
+ <h3>Мастер</h3>
+ <p>После процедуры клиент спрашивает: чем ухаживать, как сохранить результат, что нельзя использовать.</p>
+ </div>
+ <div class="card reveal">
+ <h3>Эксперт</h3>
+ <p>Косметолог, трихолог, блогер или advisor помогает клиенту не просто купить, а принять решение.</p>
+ </div>
+ </div>
+
+ <div class="story-block reveal">
+ <p>
+ Beauty<sup class="three-fill-symbol">³</sup> не ограничивается логикой «маркетплейса косметики».
+ Рынок уже знает маркетплейсы, каталоги, скидки, отзывы и рекламную выдачу. Beauty<sup class="three-fill-symbol">³</sup> выходит за пределы этой модели.
+ </p>
+ <p>
+ Суть Beauty<sup class="three-fill-symbol">³</sup>:
+ <b>мы строим инфраструктуру для миллионов beauty-рекомендаций</b>.
+ Рекомендация сегодня возникает, влияет на покупку и исчезает.
+ Beauty<sup class="three-fill-symbol">³</sup> сохраняет её, структурирует, усиливает AI и превращает в экономическую ценность.
+ </p>
+ </div>
+ </section>
+
+ <section id="problem" class="reveal">
+ <div class="kicker">Что изменилось</div>
+ <h2 class="section-title">Интернет решил <em>доступ к товарам</em>. Но не решил <span class="mark">проблему выбора</span>.</h2>
+ <p class="section-lead">
+ Раньше главный вопрос был: «Где купить?».
+ Сегодня главный вопрос: «Что именно мне подходит?».
+ И чем больше вариантов, тем дороже становится доверие.
+ </p>
+
+ <div class="comparison">
+ <div class="col">
+ <h3>Вчера</h3>
+ <ul>
+ <li><b>Дефицит доступа:</b> мало товаров, мало брендов, мало информации.</li>
+ <li><b>Главный канал:</b> магазин, консультант, полка.</li>
+ <li><b>Решение рынка:</b> маркетплейсы, доставка, отзывы, карточки товаров.</li>
+ </ul>
+ </div>
+ <div class="col">
+ <h3 class="green">Сегодня</h3>
+ <ul>
+ <li><b>Избыток выбора:</b> тысячи товаров, составов, отзывов, обзоров.</li>
+ <li><b>Главная боль:</b> покупатель не понимает, чему верить.</li>
+ <li><b>Решение Beauty<sup class="three-fill-symbol">³</sup>:</b> доверенный эксперт + AI-подбор + покупка в одном сценарии.</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="callout">
+ Чем больше вариантов, тем выше ценность человека, который помогает выбрать правильно.
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Хаос рекомендаций</div>
+ <h2 class="section-title">Доверие уже существует. Просто оно <span class="mark">не организовано</span>.</h2>
+ <p class="section-lead">
+ Beauty-рекомендации каждый день рождаются в Telegram, WhatsApp, Instagram, сторис, личных сообщениях,
+ салонах, чатах и разговорах. Они влияют на покупки, но почти не сохраняются, не измеряются и не масштабируются.
+ </p>
+
+ <div class="grid-3">
+ <div class="card reveal">
+ <div class="num">01</div>
+ <h3>Рекомендация исчезает</h3>
+ <p>Мастер посоветовал уход. Клиент мог купить. Но сама рекомендация не стала ни данными, ни активом, ни повторной продажей.</p>
+ </div>
+ <div class="card reveal">
+ <div class="num">02</div>
+ <h3>Эксперт недомонетизирует доверие</h3>
+ <p>Ему доверяют, но он часто продаёт только своё время, а не свою репутацию, знания и влияние.</p>
+ </div>
+ <div class="card reveal">
+ <div class="num">03</div>
+ <h3>Бренд платит за шум</h3>
+ <p>Вместо доступа к реальным доверительным связям бренды покупают рекламу, скидки, охваты и место в выдаче.</p>
+ </div>
+ </div>
+
+ <div class="quote">
+ Trust exists.
+ <span class="green">Infrastructure doesn’t.</span>
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Недостающий слой</div>
+ <h2 class="section-title">Информация, платежи и логистика получили инфраструктуру. Доверие — ещё нет.</h2>
+ <p class="section-lead">
+ Самые дорогие технологические компании часто строят не «ещё один товар», а новый слой инфраструктуры.
+ Beauty<sup class="three-fill-symbol">³</sup> применяет эту логику к рынку рекомендаций и экспертного доверия.
+ </p>
+
+ <div class="flow">
+ <div class="flow-row reveal"><strong>Информация</strong><p>Поиск, индексация, базы знаний, рекомендательные системы. Информация стала организованной.</p></div>
+ <div class="flow-row reveal"><strong>Платежи</strong><p>Процессинг, эквайринг, финтех. Деньги стали двигаться быстрее и проще.</p></div>
+ <div class="flow-row reveal"><strong>Логистика</strong><p>Склады, доставка, fulfillment. Товары стали двигаться предсказуемо.</p></div>
+ <div class="flow-row reveal"><strong>Доверие</strong><p>Эксперты, рекомендации, влияние, репутация. Всё это уже есть, но пока живёт хаотично.</p></div>
+ </div>
+
+ <div class="callout">
+ Beauty<sup class="three-fill-symbol">³</sup> строит недостающий слой: Trust Infrastructure.
+ </div>
+ </section>
+
+ <section id="solution" class="reveal">
+ <div class="kicker">Новая категория</div>
+ <h2 class="section-title">Мы не пытаемся стать <em>лучше маркетплейса</em>. Мы строим <span class="mark">следующий слой рынка</span>.</h2>
+ <p class="section-lead">
+ 
+ Маркетплейсы масштабируют товары. Beauty<sup class="three-fill-symbol">³</sup> масштабирует доверие.
+ </p>
+
+ <div class="grid-4">
+ <div class="card reveal">
+ <div class="small-title">Beauty 1.0</div>
+ <h3>Магазины</h3>
+ <p>Полка, консультант, физическая витрина, ограниченный выбор.</p>
+ </div>
+ <div class="card reveal">
+ <div class="small-title">Beauty 2.0</div>
+ <h3>Маркетплейсы</h3>
+ <p>Большой каталог, цена, логистика, отзывы, выдача.</p>
+ </div>
+ <div class="card reveal">
+ <div class="small-title">Beauty 3.0</div>
+ <h3>AI + Trust Networks</h3>
+ <p>Персональный выбор, доверенные эксперты, данные, рекомендации.</p>
+ </div>
+ <div class="card reveal">
+ <div class="small-title">B<sup class="three-fill-symbol">³</sup></div>
+ <h3>Trust Commerce</h3>
+ <p>Инфраструктура, которая превращает экспертное доверие в продажи.</p>
+ </div>
+ </div>
+
+ <div class="story-block reveal">
+ <p>
+ В этом смысле Beauty<sup class="three-fill-symbol">³</sup> — не просто beauty-проект.
+ Beauty — первая вертикаль, потому что там доверие особенно важно.
+ Но сама технология может применяться в любой категории, где есть цепочка:
+ <b>эксперт → доверие → рекомендация → покупка</b>.
+ </p>
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Что такое Beauty<sup class="three-fill-symbol">³</sup></div>
+ <h2 class="section-title">Платформа, где эксперт получает <span class="mark">цифровой бизнес</span>, а клиент — <em>уверенный выбор</em>.</h2>
+ <p class="section-lead">
+ На первом этапе Beauty<sup class="three-fill-symbol">³</sup> — это не огромный открытый маркетплейс.
+ Это платформа для Beauty Advisors: персональные витрины, AI-подбор, каталог поставщика,
+ CRM, комиссии, аналитика и повторные продажи.
+ </p>
+
+ <div class="grid-3">
+ <div class="card reveal">
+ <div class="num">Trust</div>
+ <h3>Доверие эксперта</h3>
+ <p>Advisor уже имеет отношения с клиентами. Beauty<sup class="three-fill-symbol">³</sup> помогает превратить эти отношения в системный канал продаж.</p>
+ </div>
+ <div class="card reveal">
+ <div class="num">AI</div>
+ <h3>Персональный подбор</h3>
+ <p>AI учитывает анкету, цель, тип волос/кожи, бюджет, ограничения и историю покупок.</p>
+ </div>
+ <div class="card reveal">
+ <div class="num">Commerce</div>
+ <h3>Транзакция и повтор</h3>
+ <p>Каталог, заказ, комиссия, выплаты, аналитика и повторные покупки происходят внутри одной системы.</p>
+ </div>
+ </div>
+
+ <div class="callout">
+ Мы не заменяем эксперта AI. Мы делаем хорошего эксперта сильнее.
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Почему сейчас</div>
+ <h2 class="section-title">Три сдвига сходятся одновременно.</h2>
+ <p class="section-lead">
+ Beauty<sup class="three-fill-symbol">³</sup> появляется в момент, когда старая модель рекламы теряет доверие,
+ AI меняет привычку поиска, а эксперты становятся новыми витринами продаж.
+ </p>
+
+ <div class="grid-3">
+ <div class="card reveal">
+ <div class="num">1</div>
+ <h3>Доверие заменяет рекламу</h3>
+ <p>Покупатель знает, что блогеру могли заплатить, отзывы могли накрутить, а место в выдаче можно купить.</p>
+ </div>
+ <div class="card reveal">
+ <div class="num">2</div>
+ <h3>AI заменяет поиск</h3>
+ <p>Человек больше не хочет сравнивать сотни карточек. Он хочет задать вопрос и получить разумный подбор.</p>
+ </div>
+ <div class="card reveal">
+ <div class="num">3</div>
+ <h3>Эксперт становится витриной</h3>
+ <p>Мастер, косметолог, продавец и инфлюенсер становятся точками доверия, через которые клиент покупает.</p>
+ </div>
+ </div>
+ </section>
+
+ <section id="launch" class="reveal">
+ <div class="kicker">Стартовая стратегия</div>
+ <h2 class="section-title">Почему волосы — сильная точка входа?</h2>
+ <p class="section-lead">
+ Не потому, что волосы — единственный рынок. А потому, что в этом сегменте доверие уже встроено в процесс.
+ Клиент проводит с мастером часы, видит результат, задаёт вопросы и естественно покупает уход после процедуры.
+ </p>
+
+ <div class="metric-grid reveal">
+ <div class="metric reveal"><div class="big">1</div><p>крупный стратегический поставщик</p></div>
+ <div class="metric reveal"><div class="big">1000+</div><p>SKU в стартовом каталоге</p></div>
+ <div class="metric reveal"><div class="big">200</div><p>existing Beauty Advisors</p></div>
+ <div class="metric reveal"><div class="big">10–20k</div><p>существующих клиентских связей</p></div>
+ </div>
+
+ <div class="quote">
+ Мы начинаем не там, где есть товар.
+ Мы начинаем там, где <span class="green">уже есть доверие</span>.
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Execution advantage</div>
+ <h2 class="section-title">Beauty<sup class="three-fill-symbol">³</sup> не создаёт сеть с нуля. Beauty<sup class="three-fill-symbol">³</sup> <span class="mark">активирует существующую</span>.</h2>
+ <p class="section-lead">
+ 
+ Типичный стартап сначала ищет поставщиков, затем пользователей, затем дистрибуцию.
+ У Beauty<sup class="three-fill-symbol">³</sup> стартовая экосистема уже есть. Нужен технологический слой.
+ </p>
+
+ <div class="comparison">
+ <div class="col">
+ <h3>Типичный стартап</h3>
+ <ul>
+ <li>Идея</li>
+ <li>Разработка продукта</li>
+ <li>Поиск поставщиков</li>
+ <li>Поиск пользователей</li>
+ <li>Покупка трафика</li>
+ <li>Проверка: есть ли спрос?</li>
+ </ul>
+ </div>
+ <div class="col">
+ <h3 class="green">Beauty<sup class="three-fill-symbol">³</sup></h3>
+ <ul>
+ <li><b>Стратегический поставщик</b></li>
+ <li><b>1000+ товаров</b></li>
+ <li><b>200 advisors</b></li>
+ <li><b>10 000–20 000 клиентских связей</b></li>
+ <li><b>Technology Layer</b></li>
+ <li><b>Масштабирование существующего спроса</b></li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="callout">
+ Это не funding идеи. Это funding технологического слоя для уже существующей сети доверия.
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Продуктовая архитектура</div>
+ <h2 class="section-title">Что должен получить advisor в первый день?</h2>
+ <p class="section-lead">
+ Первый продукт Beauty<sup class="three-fill-symbol">³</sup> — рабочий инструмент для advisor: витрина, AI-подбор, CRM, комиссии, аналитика и повторные продажи.
+ </p>
+
+ <div class="grid-3">
+ <div class="card reveal"><h3>Персональная витрина</h3><p>Advisor получает свою ссылку, подборки, наборы ухода и товары, которые он может рекомендовать клиентам.</p></div>
+ <div class="card reveal"><h3>AI-консультант</h3><p>Анкета клиента, цель, бюджет, ограничения и автоматический подбор с объяснением.</p></div>
+ <div class="card reveal"><h3>Каталог поставщика</h3><p>Цены, остатки, категории, готовые комплекты и коммерческие условия в одном месте.</p></div>
+ <div class="card reveal"><h3>CRM и повторные продажи</h3><p>История клиентов, напоминания, сценарии ухода, повторный заказ через месяц.</p></div>
+ <div class="card reveal"><h3>Комиссии и выплаты</h3><p>Прозрачная мотивация: advisor видит продажи, начисления и результат своих рекомендаций.</p></div>
+ <div class="card reveal"><h3>Аналитика доверия</h3><p>Какие рекомендации работают, что покупают повторно, какие клиенты возвращаются.</p></div>
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Путь клиента</div>
+ <h2 class="section-title">Beauty<sup class="three-fill-symbol">³</sup> продаёт <em>не товар</em>. Beauty<sup class="three-fill-symbol">³</sup> продаёт <span class="mark">уверенность в выборе</span>.</h2>
+ <p class="section-lead">
+ Клиент не должен чувствовать, что его бросили в каталог.
+ Он должен пройти понятный путь: рассказал о себе → получил подбор → получил подтверждение от advisor → купил → вернулся за повтором.
+ </p>
+
+ <div class="flow">
+ <div class="flow-row reveal"><strong>1. Анкета</strong><p>Тип волос/кожи, цель, бюджет, ограничения, процедуры, привычки ухода.</p></div>
+ <div class="flow-row reveal"><strong>2. AI-подбор</strong><p>Система предлагает набор товаров и объясняет, почему именно он подходит.</p></div>
+ <div class="flow-row reveal"><strong>3. Advisor</strong><p>Эксперт валидирует рекомендацию и добавляет человеческое доверие.</p></div>
+ <div class="flow-row reveal"><strong>4. Покупка</strong><p>Клиент покупает через витрину advisor. Платформа фиксирует заказ, комиссию и данные.</p></div>
+ <div class="flow-row reveal"><strong>5. Повтор</strong><p>Через месяц система возвращает клиента к уходу, напоминанию и новой рекомендации.</p></div>
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Механика роста</div>
+ <h2 class="section-title">Trust Flywheel: каждая рекомендация усиливает сеть.</h2>
+ <p class="section-lead">
+ Чем больше advisors, рекомендаций и покупок проходит через Beauty<sup class="three-fill-symbol">³</sup>,
+ тем точнее становятся рекомендации, выше повторные продажи и сильнее доверие к платформе.
+ </p>
+
+ <div class="grid-2">
+ <div class="card reveal">
+ <h3>Как крутится маховик</h3>
+ <p>
+ Advisor даёт рекомендацию → клиент покупает → платформа собирает данные →
+ AI учится → рекомендации становятся точнее → результат лучше →
+ доверие растёт → advisor рекомендует больше.
+ </p>
+ </div>
+ <div class="card reveal">
+ <h3>Почему это важно для модели</h3>
+ <p>
+ Рост создаётся не только рекламой. Он создаётся повторяемыми доверительными действиями.
+ Чем больше сеть, тем больше данных, точнее подбор и выше ценность платформы.
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Почему маркетплейсы не решают это</div>
+ <h2 class="section-title">Маркетплейсы масштабируют <em>товары</em>. Beauty<sup class="three-fill-symbol">³</sup> масштабирует <span class="mark">доверие</span>.</h2>
+ <p class="section-lead">
+ Главное отличие от крупных маркетплейсов — не в интерфейсе, а в природе актива.
+ Они оптимизированы под транзакции, каталог, логистику и рекламную выдачу.
+ Beauty<sup class="three-fill-symbol">³</sup> оптимизирован под доверие, рекомендации и экспертные связи.
+ </p>
+
+ <div class="comparison">
+ <div class="col">
+ <h3>Маркетплейсы</h3>
+ <ul>
+ <li><b>Главный актив:</b> каталог и трафик</li>
+ <li><b>Главный вопрос:</b> что продать?</li>
+ <li><b>Рост:</b> реклама, скидки, выдача</li>
+ <li><b>Масштабирование:</b> товары</li>
+ <li><b>Слабость:</b> перегруз выбора и недоверие к рекомендациям</li>
+ </ul>
+ </div>
+ <div class="col">
+ <h3 class="green">Beauty<sup class="three-fill-symbol">³</sup></h3>
+ <ul>
+ <li><b>Главный актив:</b> Beauty Graph</li>
+ <li><b>Главный вопрос:</b> кому клиент доверяет?</li>
+ <li><b>Рост:</b> advisors, рекомендации, повторные покупки</li>
+ <li><b>Масштабирование:</b> доверие</li>
+ <li><b>Сила:</b> сеть связей, которую сложно быстро скопировать</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="quote">
+ Интерфейс можно повторить. Каталог можно расширить.
+ <span class="green">Сеть доверия — нет.</span>
+ </div>
+ </section>
+
+ <section id="moat" class="reveal">
+ <div class="kicker">Защитный ров</div>
+ <h2 class="section-title">Beauty Graph — <span class="mark">карта доверия</span> beauty-индустрии.</h2>
+ <p class="section-lead">
+ Через несколько лет ценность Beauty<sup class="three-fill-symbol">³</sup> может быть не в том, что через платформу продают шампунь.
+ Ценность будет в том, что платформа знает: кто влияет, кому доверяют, какие рекомендации работают,
+ какие товары приводят к повторным покупкам и какие advisors создают реальную ценность.
+ </p>
+
+ <div class="network reveal">
+ <svg viewBox="0 0 1000 540" preserveAspectRatio="none">
+ <g stroke="#b8d8a8" stroke-opacity=".14" stroke-width="1">
+ <line x1="80" y1="80" x2="470" y2="255"/>
+ <line x1="210" y1="430" x2="470" y2="255"/>
+ <line x1="470" y1="255" x2="780" y2="120"/>
+ <line x1="470" y1="255" x2="870" y2="410"/>
+ <line x1="270" y1="110" x2="660" y2="430"/>
+ <line x1="120" y1="310" x2="790" y2="120"/>
+ <line x1="630" y1="85" x2="870" y2="410"/>
+ <line x1="80" y1="80" x2="210" y2="430"/>
+ <line x1="780" y1="120" x2="930" y2="245"/>
+ <line x1="930" y1="245" x2="870" y2="410"/>
+ <line x1="350" y1="480" x2="660" y2="430"/>
+ </g>
+ <g fill="#b8d8a8" fill-opacity=".88">
+ <circle cx="80" cy="80" r="5"/><circle cx="210" cy="430" r="6"/><circle cx="470" cy="255" r="9"/>
+ <circle cx="780" cy="120" r="5"/><circle cx="870" cy="410" r="6"/><circle cx="270" cy="110" r="4"/>
+ <circle cx="660" cy="430" r="6"/><circle cx="120" cy="310" r="4"/><circle cx="630" cy="85" r="5"/>
+ <circle cx="930" cy="245" r="4"/><circle cx="350" cy="480" r="4"/><circle cx="540" cy="150" r="4"/>
+ <circle cx="710" cy="285" r="4"/><circle cx="360" cy="315" r="4"/>
+ </g>
+ </svg>
+ <div class="network-center reveal">Beauty<br>Graph</div>
+ </div>
+
+ <div class="grid-3" style="margin-top:20px">
+ <div class="card reveal"><h3>Что накапливается</h3><p>Кто кому доверяет, какие рекомендации работают, какие товары покупают повторно.</p></div>
+ <div class="card reveal"><h3>Почему это ценно</h3><p>Сеть становится точнее с каждой покупкой, рекомендацией и подтверждённым результатом.</p></div>
+ <div class="card reveal"><h3>Почему это moat</h3><p>Конкурент может скопировать интерфейс, но не историю доверительных связей.</p></div>
+ </div>
+
+ <div class="quote">
+ Google организовал информацию. LinkedIn организовал профессиональные связи.
+ <span class="green">Beauty<sup class="three-fill-symbol">³</sup> организует доверие.</span>
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Видение</div>
+ <h2 class="section-title">Если доверие можно сохранить, измерить, масштабировать и монетизировать — оно становится инфраструктурой.</h2>
+ <p class="section-lead">
+ Beauty — первая вертикаль. Но долгосрочно Beauty<sup class="three-fill-symbol">³</sup> может расширяться в косметологию,
+ wellness, anti-age, эстетическую медицину и другие категории, где решение принимается через эксперта.
+ </p>
+
+ <div class="grid-4">
+ <div class="card reveal"><h3>Волосы</h3><p>Старт через уже существующую сеть advisors и поставщика.</p></div>
+ <div class="card reveal"><h3>Косметология</h3><p>Высокая роль доверия, рекомендаций и повторных процедур.</p></div>
+ <div class="card reveal"><h3>Wellness</h3><p>Персональные сценарии, привычки, курсы и экспертные советы.</p></div>
+ <div class="card reveal"><h3>Эстетическая медицина</h3><p>Категория, где ошибка выбора дорога, а экспертное доверие критично.</p></div>
+ </div>
+
+ <div class="callout">
+ Мы запускаемся в beauty. Но строим технологию для экономики доверия.
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Категорийная идея</div>
+ <h2 class="section-title">Expert-led commerce: следующая стадия после маркетплейсов и рекламы</h2>
+ <p class="section-lead">
+ В категориях с высоким доверием покупка всё чаще начинается не с поиска товара, а с выбора человека,
+ которому можно верить. Beauty<sup class="three-fill-symbol">³</sup> строит коммерческую инфраструктуру вокруг этого поведения.
+ </p>
+
+ <div class="grid-3">
+ <div class="card reveal">
+ <h3>Search-led commerce</h3>
+ <p>Покупатель сам ищет товар, сравнивает карточки, отзывы, цены и пытается принять решение.</p>
+ </div>
+ <div class="card reveal">
+ <h3>Marketplace-led commerce</h3>
+ <p>Платформа оптимизирует ассортимент, выдачу, логистику, скидки и конверсию в транзакцию.</p>
+ </div>
+ <div class="card reveal">
+ <h3>Expert-led commerce</h3>
+ <p>Решение начинается с доверенного эксперта, усиливается AI и завершается покупкой внутри платформы.</p>
+ </div>
+ </div>
+
+ <div class="callout">
+ Следующий слой commerce строится не только вокруг товара, а вокруг доверия, персонализации и экспертного влияния.
+ </div>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Почему это может стать большим</div>
+ <h2 class="section-title">Ценность Beauty<sup class="three-fill-symbol">³</sup> растёт не только от продаж, а от накопления доверительных связей</h2>
+ <p class="section-lead">
+ Каждая рекомендация, покупка, повтор и подтверждённый результат создают данные, которые усиливают платформу.
+ Чем больше сеть advisors и клиентов, тем ценнее становится Beauty Graph.
+ </p>
+
+ <div class="grid-3">
+ <div class="card reveal">
+ <h3>Рекомендации становятся активом</h3>
+ <p>То, что раньше исчезало в чате или разговоре, превращается в измеряемую историю влияния и результата.</p>
+ </div>
+ <div class="card reveal">
+ <h3>Advisor строит цифровой бизнес</h3>
+ <p>Эксперт продаёт не только часы своего времени, но и своё доверие, подборки, знания и клиентские отношения.</p>
+ </div>
+ <div class="card reveal">
+ <h3>Платформа учится на реальных покупках</h3>
+ <p>AI улучшается не на абстрактных кликах, а на связке «рекомендация → покупка → повтор → результат».</p>
+ </div>
+ </div>
+ </section>
+
+ <section id="why-big" class="impact-section reveal">
+    <div class="kicker">Why this can become big</div>
+    <h2 class="section-title">Beauty<sup class="three-fill-symbol">³</sup> может расти не только как магазин, а как инфраструктурный слой</h2>
+    <p class="section-lead">
+      Долгосрочная ценность компании формируется не только комиссией с продаж,
+      а сетью доверительных связей, данными рекомендаций и повторяемой моделью expert-led commerce.
+    </p>
+
+    <div class="grid-4">
+      <div class="card reveal">
+        <h3>Beauty is first vertical</h3>
+        <p>Волосы — точка входа. Модель масштабируется в косметологию, wellness, anti-age и эстетические категории.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Experts become storefronts</h3>
+        <p>Эксперт становится не только консультантом, но и персональной витриной для своей аудитории.</p>
+      </div>
+      <div class="card reveal">
+        <h3>AI needs trust to convert</h3>
+        <p>AI может подобрать товар, но доверие закрывает решение и снижает тревогу ошибки.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Recommendations become assets</h3>
+        <p>Рекомендации превращаются в данные, повторные продажи и защитимый Beauty Graph.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+ <div class="kicker">Рынок</div>
+ <h2 class="section-title">Рынок достаточно большой для платформенной истории.</h2>
+ <p class="section-lead">
+ Beauty<sup class="three-fill-symbol">³</sup> стартует в категории с регулярными покупками, высокой ролью рекомендаций
+ и растущим запросом на персонализацию. Рыночные цифры подтверждают масштаб,
+ но главная ставка — не на размер каталога, а на изменение механики продаж.
+ </p>
+
+ <div class="grid-3">
+ <div class="card reveal">
+ <div class="num">$450B</div>
+ <h3>Глобальный beauty</h3>
+ <p>McKinsey / Business of Fashion: глобальная beauty-индустрия около $450B; ожидаемый рост около 5% в год до 2030.</p>
+ </div>
+ <div class="card reveal">
+ <div class="num">$7.97B</div>
+ <h3>Россия beauty & personal care</h3>
+ <p>Mordor Intelligence: оценка рынка в 2025 году; прогноз — $11.75B к 2031.</p>
+ </div>
+ <div class="card reveal">
+ <div class="num">$96.9B</div>
+ <h3>Hair care как вход</h3>
+ <p>Future Market Insights: оценка hair care market в 2025 году; прогноз — $132.8B к 2035.</p>
+ </div>
+ </div>
+
+ <p class="sublead" style="margin-top:18px">
+ Эти цифры нужны не для того, чтобы «раздуть TAM», а чтобы показать: первая вертикаль достаточно крупная,
+ регулярная и естественно связана с рекомендациями.
+ </p>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Экономика старта</div>
+ <h2 class="section-title">Первые сценарии проверяемы уже на стартовой сети.</h2>
+ <p class="section-lead">
+ Мы не обещаем партнёру гарантированный возврат за 18 месяцев.
+ Сильнее и честнее показать цель: построить технологический слой и вывести сеть
+ на измеримые показатели GMV и выручки платформы.
+ </p>
+
+ <div class="economics">
+ <div class="scenario reveal">
+ <h3>Консервативно</h3>
+ <div class="big">6 млн ₽</div>
+ <p>200 advisors × 50 клиентов × 20% активных покупателей × 3000 ₽ = около 6 млн ₽ GMV/мес. Комиссия 10% — около 600 тыс ₽ выручки платформы.</p>
+ </div>
+ <div class="scenario reveal">
+ <h3>Базово</h3>
+ <div class="big">13.5 млн ₽</div>
+ <p>200 advisors × 75 клиентов × 30% активных покупателей × 3000 ₽ = около 13.5 млн ₽ GMV/мес. Комиссия 10% — около 1.35 млн ₽/мес.</p>
+ </div>
+ <div class="scenario reveal">
+ <h3>Цель 12–18 мес</h3>
+ <div class="big">50 млн ₽</div>
+ <p>500 advisors, 50 000 клиентов, около 50 млн ₽ GMV/мес и 5 млн ₽ выручки платформы/мес при комиссии 10%.</p>
+ </div>
+ </div>
+
+ <div class="callout">
+ Сценарии показывают проверяемую механику роста: advisors, клиентская база, средний чек, частота покупок и комиссия платформы.
+ </div>
+ </section>
+
+ <section id="roadmap" class="impact-section reveal">
+    <div class="kicker">0–18 months roadmap</div>
+    <h2 class="section-title">План запуска: от MVP к сети из 500 advisors</h2>
+
+    <div class="roadmap">
+      <div class="roadmap-item reveal">
+        <span>0–3 мес.</span>
+        <h3>MVP platform</h3>
+        <p>Витрина advisor, каталог поставщика, базовый AI-подбор, оформление заказа, учёт комиссий.</p>
+      </div>
+      <div class="roadmap-item reveal">
+        <span>3–6 мес.</span>
+        <h3>Advisor activation</h3>
+        <p>Onboarding первой группы advisors, обучение, первые продажи, аналитика рекомендаций.</p>
+      </div>
+      <div class="roadmap-item reveal">
+        <span>6–12 мес.</span>
+        <h3>Repeat engine</h3>
+        <p>CRM, сценарии повторных покупок, напоминания, персональные подборки, улучшение AI.</p>
+      </div>
+      <div class="roadmap-item reveal">
+        <span>12–18 мес.</span>
+        <h3>Scale Beauty Graph</h3>
+        <p>500 advisors, 50 000 клиентов, рост GMV, расширение категорий и партнёрской сети.</p>
+      </div>
+    </div>
+  </section>
+
+ <section id="talk" class="reveal">
+ <div class="kicker">Ключевые тезисы</div>
+ <h2 class="section-title">Формулировки, которые держат всю историю Beauty<sup class="three-fill-symbol">³</sup></h2>
+ <p class="section-lead">
+ Эти тезисы фиксируют позиционирование компании: Beauty<sup class="three-fill-symbol">³</sup> — не магазин, не каталог и не рекламная платформа,
+ а trust infrastructure для экспертной торговли.
+ </p>
+
+ <div class="talk-track">
+ <div class="qa reveal">
+ <h3>Beauty<sup class="three-fill-symbol">³</sup> — не маркетплейс. Маркетплейс — только интерфейс монетизации.</h3>
+ <p>Компания строит инфраструктуру доверительных рекомендаций: эксперт → AI-подбор → покупка → данные → повтор.</p>
+ </div>
+ <div class="qa reveal">
+ <h3>Beauty — первая вертикаль. Trust Commerce — долгосрочный рынок.</h3>
+ <p>Та же логика применима в косметологии, wellness, anti-age и других категориях, где выбор совершается через эксперта.</p>
+ </div>
+ <div class="qa reveal">
+ <h3>Мы не создаём спрос. Мы организуем уже существующее доверие.</h3>
+ <p>Поставщик, каталог, advisors и клиентские отношения уже существуют. Beauty<sup class="three-fill-symbol">³</sup> превращает их в технологическую систему.</p>
+ </div>
+ <div class="qa reveal">
+ <h3>Главный актив — Beauty Graph.</h3>
+ <p>Со временем платформа накапливает карту доверия: кто влияет, кому доверяют, какие рекомендации работают и какие продукты возвращают клиента.</p>
+ </div>
+ </div>
+ </section>
+
+ <section class="final reveal">
+ <div class="brand-final">B<sup>³</sup></div>
+ <h2 class="section-title" style="margin-left:auto;margin-right:auto;text-align:center"><em>Превращаем доверие в продажи.</em></h2>
+ <p class="section-lead" style="margin-left:auto;margin-right:auto;text-align:center">
+ Мы не строим ещё один beauty-маркетплейс.
+ Мы строим инфраструктуру доверия для следующего поколения commerce.
+ </p>
+ </section>
+
+ <section class="reveal">
+ <div class="kicker">Приложение</div>
+ <h2 class="section-title">Источники и допущения</h2>
+ <ul class="sources">
+ <li>McKinsey / Business of Fashion, State of Beauty 2025: глобальная beauty-индустрия около $450B; ожидаемый рост около 5% в год до 2030.</li>
+ <li>Mordor Intelligence: Russia Beauty & Personal Care — $7.97B в 2025, $8.51B в 2026, прогноз $11.75B к 2031.</li>
+ <li>Future Market Insights: Hair Care Market — около $96.9B в 2025, прогноз $132.8B к 2035.</li>
+ <li>Внутренние допущения Beauty<sup class="three-fill-symbol">³</sup>: 1 стратегический поставщик, 1000+ SKU, 200 existing advisors, 50–100 клиентов у advisor, средний чек 3000 ₽, комиссия платформы 10%, целевой сценарий 500 advisors / 50 000 клиентов / 50 млн ₽ GMV в месяц.</li>
+ <li>Следующий этап: финмодель, договорённости с поставщиком, описание MVP, юридическая схема партнёрских выплат и roadmap на 18–24 месяца.</li>
+ </ul>
+ </section>
+</main>
+</div>
+
+<script>
+(function () {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setupReveal() {
+    const items = document.querySelectorAll('.reveal');
+    if (reduce) {
+      items.forEach(el => el.classList.add('visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const siblings = Array.from(el.parentElement ? el.parentElement.children : []);
+          const index = siblings.indexOf(el);
+          if (index > -1 && index < 4) el.dataset.delay = String(index);
+          el.classList.add('visible');
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -12% 0px' });
+
+    items.forEach(el => observer.observe(el));
+  }
+
+  function setupTyping() {
+    const targets = document.querySelectorAll('.type-line[data-text]');
+    if (!targets.length) return;
+
+    const type = (el) => {
+      if (el.dataset.done === '1') return;
+      el.dataset.done = '1';
+      const text = el.dataset.text || '';
+      el.textContent = '';
+      el.classList.add('is-typing');
+
+      if (reduce) {
+        el.textContent = text;
+        el.classList.remove('is-typing');
+        return;
+      }
+
+      let i = 0;
+      const tick = () => {
+        el.textContent = text.slice(0, i);
+        i += 1;
+        if (i <= text.length) {
+          setTimeout(tick, 46 + Math.random() * 34);
+        } else {
+          setTimeout(() => el.classList.remove('is-typing'), 900);
+        }
+      };
+      tick();
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          type(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    targets.forEach(el => observer.observe(el));
+  }
+
+  function setupHeroParallax() {
+    if (reduce) return;
+    const panel = document.querySelector('.hero-panel');
+    if (!panel) return;
+
+    let ticking = false;
+    const update = () => {
+      const y = window.scrollY || 0;
+      const move = Math.min(14, y * 0.018);
+      panel.style.transform = `translate3d(0, ${move}px, 0)`;
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupReveal();
+    setupTyping();
+    setupHeroParallax();
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setupDrawnUnderlines() {
+    const highlights = document.querySelectorAll('.mark, u, .underline');
+    if (!highlights.length) return;
+
+    if (reduce) {
+      highlights.forEach(el => el.classList.add('visible-underline'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          setTimeout(() => el.classList.add('visible-underline'), 180);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.55, rootMargin: '0px 0px -12% 0px' });
+
+    highlights.forEach(el => observer.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupDrawnUnderlines);
+  } else {
+    setupDrawnUnderlines();
+  }
+})();
+</script>
+
+<script>
+(function () {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setupThreeFill() {
+    const threes = document.querySelectorAll('.brand sup, h1 sup, .brand-final sup');
+    if (!threes.length) return;
+
+    if (reduce) {
+      threes.forEach(el => el.classList.add('fill-three'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('fill-three'), 220);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6, rootMargin: '0px 0px -8% 0px' });
+
+    threes.forEach(el => observer.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupThreeFill);
+  } else {
+    setupThreeFill();
+  }
+})();
+</script>
+
+<script>
+(function () {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setupAllThreeFill() {
+    const threes = document.querySelectorAll('.three-fill-symbol, .brand sup, h1 sup, .brand-final sup');
+    if (!threes.length) return;
+
+    if (reduce) {
+      threes.forEach(el => el.classList.add('fill-three'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('fill-three'), 180);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.45, rootMargin: '0px 0px -8% 0px' });
+
+    threes.forEach(el => observer.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupAllThreeFill);
+  } else {
+    setupAllThreeFill();
+  }
+})();
+</script>
+
+</body>
+</html>
