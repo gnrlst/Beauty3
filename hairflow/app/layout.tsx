@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HairFlow — учёт компании",
-  description: "Общая база закупок, производства, волос и продаж с правами сотрудников.",
+  title: "B3 — учёт",
+  description: "Простой учёт поступлений, обработки, перемещений и продаж волос.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
