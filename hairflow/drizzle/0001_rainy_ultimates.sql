@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `members_email_company_unique` ON `members` (`email`,`company`);
